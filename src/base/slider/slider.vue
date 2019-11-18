@@ -40,6 +40,9 @@ export default {
       this._setSliderWidth()
       this._initDots()
       this._initSlider()
+      if (this.autoPlay) {
+        this._play()
+      }
     }, 20)
   },
   methods: {
@@ -88,7 +91,6 @@ export default {
           pageIndex -= 1
         }
         this.currentPageIndex = pageIndex
-
         if (this.autoPlay) {
           clearTimeout(this.timer)
           this._play()
